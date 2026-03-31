@@ -127,13 +127,18 @@ namespace HomeLoanCalculator
             // ── 3. 輸出顯示（千分位 + 小數後兩位）──────────────────
             string fmt = "#,##0.00";
 
-            txtTotal.Text = loanAmount.ToString(fmt);
-            txtMPAP.Text = (gracePeriod > 0 ? 0m : repayMonthlyPrincipal).ToString(fmt);
-            txtMPAI.Text = (gracePeriod > 0 ? graceMonthlyInterest : repayMonthlyInterest).ToString(fmt);
-            txtFIP.Text = firstMonthPrincipal.ToString(fmt);
-            txtFII.Text = firstMonthInterest.ToString(fmt);
-            txtTIE.Text = totalInterest.ToString(fmt);
-            txtTPA.Text = totalPayment.ToString(fmt);
+            lblTotalResult.Text = loanAmount.ToString(fmt);
+            lblMPAPResult.Text = (gracePeriod > 0 ? 0m : repayMonthlyPrincipal).ToString(fmt);
+            lblMPAIResult.Text = (gracePeriod > 0 ? graceMonthlyInterest : repayMonthlyInterest).ToString(fmt);
+            lblFIPResult.Text = firstMonthPrincipal.ToString(fmt);
+            lblFIIResult.Text = firstMonthInterest.ToString(fmt);
+            lblTIEResult.Text = totalInterest.ToString(fmt);
+            lblTPAResult.Text = totalPayment.ToString(fmt);
+        }
+
+        private void grpInput_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
