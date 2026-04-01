@@ -88,7 +88,7 @@
             this.grpInput.Controls.Add(this.lblAIR);
             this.grpInput.Controls.Add(this.lblDP);
             this.grpInput.Controls.Add(this.lblTHP);
-            this.grpInput.Font = new System.Drawing.Font("新細明體", 10F);
+            this.grpInput.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.grpInput.Location = new System.Drawing.Point(26, 12);
             this.grpInput.Name = "grpInput";
             this.grpInput.Size = new System.Drawing.Size(483, 466);
@@ -102,7 +102,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(408, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 27);
+            this.label5.Size = new System.Drawing.Size(42, 34);
             this.label5.TabIndex = 14;
             this.label5.Text = "年";
             // 
@@ -111,7 +111,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(408, 293);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 27);
+            this.label4.Size = new System.Drawing.Size(42, 34);
             this.label4.TabIndex = 13;
             this.label4.Text = "年";
             // 
@@ -120,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(408, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 27);
+            this.label3.Size = new System.Drawing.Size(39, 34);
             this.label3.TabIndex = 12;
             this.label3.Text = "%";
             // 
@@ -129,7 +129,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(408, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 27);
+            this.label2.Size = new System.Drawing.Size(39, 34);
             this.label2.TabIndex = 11;
             this.label2.Text = "%";
             // 
@@ -138,7 +138,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(408, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 27);
+            this.label1.Size = new System.Drawing.Size(42, 34);
             this.label1.TabIndex = 10;
             this.label1.Text = "元";
             // 
@@ -146,7 +146,7 @@
             // 
             this.txtGP.Location = new System.Drawing.Point(200, 170);
             this.txtGP.Name = "txtGP";
-            this.txtGP.Size = new System.Drawing.Size(200, 39);
+            this.txtGP.Size = new System.Drawing.Size(200, 43);
             this.txtGP.TabIndex = 2;
             this.txtGP.Text = "0";
             this.txtGP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -155,7 +155,7 @@
             // 
             this.txtLT.Location = new System.Drawing.Point(200, 290);
             this.txtLT.Name = "txtLT";
-            this.txtLT.Size = new System.Drawing.Size(200, 39);
+            this.txtLT.Size = new System.Drawing.Size(200, 43);
             this.txtLT.TabIndex = 4;
             this.txtLT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -163,7 +163,7 @@
             // 
             this.txtAIR.Location = new System.Drawing.Point(200, 230);
             this.txtAIR.Name = "txtAIR";
-            this.txtAIR.Size = new System.Drawing.Size(200, 39);
+            this.txtAIR.Size = new System.Drawing.Size(200, 43);
             this.txtAIR.TabIndex = 3;
             this.txtAIR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -171,7 +171,7 @@
             // 
             this.txtIDP.Location = new System.Drawing.Point(200, 110);
             this.txtIDP.Name = "txtIDP";
-            this.txtIDP.Size = new System.Drawing.Size(200, 39);
+            this.txtIDP.Size = new System.Drawing.Size(200, 43);
             this.txtIDP.TabIndex = 1;
             this.txtIDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -179,7 +179,7 @@
             // 
             this.txtTHP.Location = new System.Drawing.Point(200, 50);
             this.txtTHP.Name = "txtTHP";
-            this.txtTHP.Size = new System.Drawing.Size(200, 39);
+            this.txtTHP.Size = new System.Drawing.Size(200, 43);
             this.txtTHP.TabIndex = 0;
             this.txtTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -188,7 +188,7 @@
             this.lblGP.AutoSize = true;
             this.lblGP.Location = new System.Drawing.Point(19, 173);
             this.lblGP.Name = "lblGP";
-            this.lblGP.Size = new System.Drawing.Size(93, 27);
+            this.lblGP.Size = new System.Drawing.Size(96, 34);
             this.lblGP.TabIndex = 4;
             this.lblGP.Text = "寬限期";
             // 
@@ -197,7 +197,7 @@
             this.lblLT.AutoSize = true;
             this.lblLT.Location = new System.Drawing.Point(20, 293);
             this.lblLT.Name = "lblLT";
-            this.lblLT.Size = new System.Drawing.Size(120, 27);
+            this.lblLT.Size = new System.Drawing.Size(123, 34);
             this.lblLT.TabIndex = 3;
             this.lblLT.Text = "貸款年限";
             // 
@@ -206,7 +206,7 @@
             this.lblAIR.AutoSize = true;
             this.lblAIR.Location = new System.Drawing.Point(19, 233);
             this.lblAIR.Name = "lblAIR";
-            this.lblAIR.Size = new System.Drawing.Size(120, 27);
+            this.lblAIR.Size = new System.Drawing.Size(123, 34);
             this.lblAIR.TabIndex = 2;
             this.lblAIR.Text = "貸款利率";
             // 
@@ -215,7 +215,7 @@
             this.lblDP.AutoSize = true;
             this.lblDP.Location = new System.Drawing.Point(19, 118);
             this.lblDP.Name = "lblDP";
-            this.lblDP.Size = new System.Drawing.Size(147, 27);
+            this.lblDP.Size = new System.Drawing.Size(150, 34);
             this.lblDP.TabIndex = 1;
             this.lblDP.Text = "自備款比例";
             // 
@@ -224,7 +224,7 @@
             this.lblTHP.AutoSize = true;
             this.lblTHP.Location = new System.Drawing.Point(20, 57);
             this.lblTHP.Name = "lblTHP";
-            this.lblTHP.Size = new System.Drawing.Size(120, 27);
+            this.lblTHP.Size = new System.Drawing.Size(123, 34);
             this.lblTHP.TabIndex = 0;
             this.lblTHP.Text = "房屋總價";
             // 
@@ -251,7 +251,7 @@
             this.grpOutput.Controls.Add(this.lblMPAI);
             this.grpOutput.Controls.Add(this.lblMPAP);
             this.grpOutput.Controls.Add(this.lblTotal);
-            this.grpOutput.Font = new System.Drawing.Font("新細明體", 10F);
+            this.grpOutput.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.grpOutput.Location = new System.Drawing.Point(602, 12);
             this.grpOutput.Name = "grpOutput";
             this.grpOutput.Size = new System.Drawing.Size(532, 466);
@@ -334,7 +334,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(480, 416);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 27);
+            this.label12.Size = new System.Drawing.Size(42, 34);
             this.label12.TabIndex = 27;
             this.label12.Text = "元";
             // 
@@ -343,7 +343,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(480, 356);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 27);
+            this.label11.Size = new System.Drawing.Size(42, 34);
             this.label11.TabIndex = 26;
             this.label11.Text = "元";
             // 
@@ -352,7 +352,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(480, 296);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 27);
+            this.label10.Size = new System.Drawing.Size(42, 34);
             this.label10.TabIndex = 25;
             this.label10.Text = "元";
             // 
@@ -361,7 +361,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(480, 236);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 27);
+            this.label9.Size = new System.Drawing.Size(42, 34);
             this.label9.TabIndex = 24;
             this.label9.Text = "元";
             // 
@@ -370,7 +370,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(480, 176);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 27);
+            this.label8.Size = new System.Drawing.Size(42, 34);
             this.label8.TabIndex = 23;
             this.label8.Text = "元";
             // 
@@ -379,7 +379,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(480, 118);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 27);
+            this.label7.Size = new System.Drawing.Size(42, 34);
             this.label7.TabIndex = 22;
             this.label7.Text = "元";
             // 
@@ -388,7 +388,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(480, 56);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 27);
+            this.label6.Size = new System.Drawing.Size(42, 34);
             this.label6.TabIndex = 21;
             this.label6.Text = "元";
             // 
@@ -397,7 +397,7 @@
             this.lblTPA.AutoSize = true;
             this.lblTPA.Location = new System.Drawing.Point(19, 410);
             this.lblTPA.Name = "lblTPA";
-            this.lblTPA.Size = new System.Drawing.Size(147, 27);
+            this.lblTPA.Size = new System.Drawing.Size(150, 34);
             this.lblTPA.TabIndex = 17;
             this.lblTPA.Text = "總還款金額";
             // 
@@ -406,7 +406,7 @@
             this.lblTIE.AutoSize = true;
             this.lblTIE.Location = new System.Drawing.Point(19, 350);
             this.lblTIE.Name = "lblTIE";
-            this.lblTIE.Size = new System.Drawing.Size(147, 27);
+            this.lblTIE.Size = new System.Drawing.Size(150, 34);
             this.lblTIE.TabIndex = 15;
             this.lblTIE.Text = "總利息支出";
             // 
@@ -415,7 +415,7 @@
             this.lblFIP.AutoSize = true;
             this.lblFIP.Location = new System.Drawing.Point(19, 236);
             this.lblFIP.Name = "lblFIP";
-            this.lblFIP.Size = new System.Drawing.Size(120, 27);
+            this.lblFIP.Size = new System.Drawing.Size(123, 34);
             this.lblFIP.TabIndex = 14;
             this.lblFIP.Text = "首期本金";
             // 
@@ -424,7 +424,7 @@
             this.lblFII.AutoSize = true;
             this.lblFII.Location = new System.Drawing.Point(19, 291);
             this.lblFII.Name = "lblFII";
-            this.lblFII.Size = new System.Drawing.Size(120, 27);
+            this.lblFII.Size = new System.Drawing.Size(123, 34);
             this.lblFII.TabIndex = 13;
             this.lblFII.Text = "首期利息";
             // 
@@ -433,7 +433,7 @@
             this.lblMPAI.AutoSize = true;
             this.lblMPAI.Location = new System.Drawing.Point(19, 176);
             this.lblMPAI.Name = "lblMPAI";
-            this.lblMPAI.Size = new System.Drawing.Size(174, 27);
+            this.lblMPAI.Size = new System.Drawing.Size(177, 34);
             this.lblMPAI.TabIndex = 12;
             this.lblMPAI.Text = "每月應繳利息";
             // 
@@ -442,7 +442,7 @@
             this.lblMPAP.AutoSize = true;
             this.lblMPAP.Location = new System.Drawing.Point(19, 118);
             this.lblMPAP.Name = "lblMPAP";
-            this.lblMPAP.Size = new System.Drawing.Size(174, 27);
+            this.lblMPAP.Size = new System.Drawing.Size(177, 34);
             this.lblMPAP.TabIndex = 11;
             this.lblMPAP.Text = "每月應繳本金";
             // 
@@ -451,13 +451,13 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Location = new System.Drawing.Point(19, 56);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(147, 27);
+            this.lblTotal.Size = new System.Drawing.Size(150, 34);
             this.lblTotal.TabIndex = 10;
             this.lblTotal.Text = "貸款總金額";
             // 
             // btncount
             // 
-            this.btncount.Font = new System.Drawing.Font("新細明體", 10F);
+            this.btncount.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btncount.Location = new System.Drawing.Point(521, 29);
             this.btncount.Name = "btncount";
             this.btncount.Size = new System.Drawing.Size(69, 449);
