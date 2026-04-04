@@ -16,29 +16,86 @@ namespace HomeLoanCalculator
             decimal totalHousePrice, downPaymentRate, annualInterestRate;
             int loanTerm, gracePeriod;
 
-            if (!decimal.TryParse(txtTHP.Text.Trim(), out totalHousePrice) || totalHousePrice <= 0)
+            // 房屋總價：不可空白、必須為正整數、上限 10 億
+            if (string.IsNullOrWhiteSpace(txtTHP.Text))
             {
-                MessageBox.Show("請輸入有效的房屋總價。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("房屋總價不可為空白。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTHP.Focus();
                 return;
             }
-            if (!decimal.TryParse(txtIDP.Text.Trim(), out downPaymentRate) || downPaymentRate < 0 || downPaymentRate >= 100)
+            if (!decimal.TryParse(txtTHP.Text.Trim(), out totalHousePrice)
+                || totalHousePrice < 1
+                || totalHousePrice > 1_000_000_000
+                || totalHousePrice != Math.Floor(totalHousePrice))
             {
-                MessageBox.Show("請輸入有效的自備款比例。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("房屋總價請輸入 1 ~ 1,000,000,000 之間的正整數。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTHP.Focus();
                 return;
             }
-            if (!decimal.TryParse(txtAIR.Text.Trim(), out annualInterestRate) || annualInterestRate <= 0)
+
+            // 自備款比例：不可空白、0.01 ~ 99.99、最多兩位小數
+            if (string.IsNullOrWhiteSpace(txtIDP.Text))
             {
-                MessageBox.Show("請輸入有效的貸款利率。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("自備款比例不可為空白。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDP.Focus();
                 return;
             }
-            if (!int.TryParse(txtLT.Text.Trim(), out loanTerm) || loanTerm <= 0)
+            if (!decimal.TryParse(txtIDP.Text.Trim(), out downPaymentRate)
+                || downPaymentRate < 0.01m
+                || downPaymentRate > 99.99m
+                || decimal.Round(downPaymentRate, 2) != downPaymentRate)
             {
-                MessageBox.Show("請輸入有效的貸款年限。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("自備款比例請輸入 0.01 ~ 99.99 之間的數值（最多小數兩位）。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIDP.Focus();
                 return;
             }
-            if (!int.TryParse(txtGP.Text.Trim(), out gracePeriod) || gracePeriod < 0 || gracePeriod >= loanTerm)
+
+            // 貸款利率：不可空白、0.01 ~ 30、最多兩位小數
+            if (string.IsNullOrWhiteSpace(txtAIR.Text))
             {
-                MessageBox.Show("寬限期必須小於貸款年限。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("貸款利率不可為空白。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAIR.Focus();
+                return;
+            }
+            if (!decimal.TryParse(txtAIR.Text.Trim(), out annualInterestRate)
+                || annualInterestRate < 0.01m
+                || annualInterestRate > 30m
+                || decimal.Round(annualInterestRate, 2) != annualInterestRate)
+            {
+                MessageBox.Show("貸款利率請輸入 0.01 ~ 30.00 之間的數值（最多小數兩位）。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtAIR.Focus();
+                return;
+            }
+
+            // 貸款年限：不可空白、1 ~ 40 年的正整數
+            if (string.IsNullOrWhiteSpace(txtLT.Text))
+            {
+                MessageBox.Show("貸款年限不可為空白。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLT.Focus();
+                return;
+            }
+            if (!int.TryParse(txtLT.Text.Trim(), out loanTerm)
+                || loanTerm < 1
+                || loanTerm > 40)
+            {
+                MessageBox.Show("貸款年限請輸入 1 ~ 40 之間的正整數。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLT.Focus();
+                return;
+            }
+
+            // 寬限期：不可空白、0 ~ (貸款年限 - 1) 的非負整數
+            if (string.IsNullOrWhiteSpace(txtGP.Text))
+            {
+                MessageBox.Show("寬限期不可為空白。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtGP.Focus();
+                return;
+            }
+            if (!int.TryParse(txtGP.Text.Trim(), out gracePeriod)
+                || gracePeriod < 0
+                || gracePeriod >= loanTerm)
+            {
+                MessageBox.Show($"寬限期請輸入 0 ~ {loanTerm - 1} 之間的整數（必須小於貸款年限）。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtGP.Focus();
                 return;
             }
 
@@ -75,11 +132,8 @@ namespace HomeLoanCalculator
 
             if (gracePeriod > 0)
             {
-                // 寬限期內：本金為 0，利息為寬限期月息
                 lblFIPResult.Text = "0.00";
                 lblFIIResult.Text = graceMonthlyInterest.ToString(fmt);
-
-                // 每月欄位顯示進入攤還期後的數值
                 lblMPAPResult.Text = firstRepayMonthlyPrincipal.ToString(fmt);
                 lblMPAIResult.Text = firstRepayMonthlyInterest.ToString(fmt);
                 lblTAPMResult.Text = repayMonthlyPayment.ToString(fmt);
