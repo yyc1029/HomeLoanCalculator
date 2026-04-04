@@ -44,13 +44,8 @@ namespace HomeLoanCalculator
 
             // ── 2. 核心計算 (完全依照原始數值，不進行中間捨入) ──────────────
 
-            // 貸款本金 (P)
             decimal loanAmount = totalHousePrice * (1 - downPaymentRate / 100m);
-
-            // 月利率 (r)
             decimal monthlyRate = annualInterestRate / 100m / 12m;
-
-            // 總月數與寬限期月數
             int totalMonths = loanTerm * 12;
             int graceMonths = gracePeriod * 12;
             int repayMonths = totalMonths - graceMonths;
@@ -60,46 +55,42 @@ namespace HomeLoanCalculator
 
             if (repayMonths > 0)
             {
-                // 依照內政部公式：平均攤還率 = {[(1+r)^n]*r} / {[(1+r)^n]-1}
+                // 內政部公式：平均攤還率 = {[(1+r)^n]*r} / {[(1+r)^n]-1}
                 double powFactor = Math.Pow((double)(1 + monthlyRate), repayMonths);
                 decimal averageRepayRate = (decimal)((powFactor * (double)monthlyRate) / (powFactor - 1));
-
-                // 每月應攤付本息金額 (不進位，保留所有小數)
                 repayMonthlyPayment = loanAmount * averageRepayRate;
             }
 
-            // 攤還期首月拆解 (不進位)
             decimal firstRepayMonthlyInterest = loanAmount * monthlyRate;
             decimal firstRepayMonthlyPrincipal = repayMonthlyPayment - firstRepayMonthlyInterest;
 
-            // 總支出計算：直接用高精度數值累乘
-            // 總利息 = (寬限期月息 * 寬限月數) + (攤還期月付額 * 攤還月數 - 貸款本金)
             decimal totalInterest = (graceMonthlyInterest * graceMonths) +
                                     (repayMonthlyPayment * repayMonths - loanAmount);
             decimal totalPayment = loanAmount + totalInterest;
 
-            // ── 3. 輸出顯示 (僅在最後輸出時格式化到小數點後兩位) ───────────
+            // ── 3. 輸出顯示 (僅在最後輸出時格式化) ─────────────────
             string fmt = "N2";
 
             lblTotalResult.Text = loanAmount.ToString(fmt);
 
             if (gracePeriod > 0)
             {
-                // 寬限期內顯示
+                // 寬限期內：本金為 0，利息為寬限期月息
                 lblFIPResult.Text = "0.00";
                 lblFIIResult.Text = graceMonthlyInterest.ToString(fmt);
 
-                // 顯示進入攤還期後的每月應繳數值
+                // 每月欄位顯示進入攤還期後的數值
                 lblMPAPResult.Text = firstRepayMonthlyPrincipal.ToString(fmt);
                 lblMPAIResult.Text = firstRepayMonthlyInterest.ToString(fmt);
+                lblTAPMResult.Text = repayMonthlyPayment.ToString(fmt);
             }
             else
             {
-                // 無寬限期顯示
                 lblFIPResult.Text = firstRepayMonthlyPrincipal.ToString(fmt);
                 lblFIIResult.Text = firstRepayMonthlyInterest.ToString(fmt);
                 lblMPAPResult.Text = firstRepayMonthlyPrincipal.ToString(fmt);
                 lblMPAIResult.Text = firstRepayMonthlyInterest.ToString(fmt);
+                lblTAPMResult.Text = repayMonthlyPayment.ToString(fmt);
             }
 
             lblTIEResult.Text = totalInterest.ToString(fmt);
