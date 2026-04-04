@@ -11,8 +11,29 @@
 備註：
 可以使用tab鍵進行輸入，有調整好tableindex。
 ```
+## 計算公式
+依照內政部房貸試算標準，採用等額本息攤還方式：
+```
+月利率 r = 年利率 ÷ 12
+每月應繳 = P × r × (1+r)^n / [(1+r)^n - 1]
+```
+- P：貸款本金
+- r：月利率
+- n：攤還月數（總月數 - 寬限期月數）
+
+寬限期間內每月僅繳利息，不還本金。
+
+## 輸入驗證
+1. 房屋總價必須為正數
+1. 自備款比例0 ~ 99 之間
+1. 貸款利率必須為正數
+1. 貸款年限必須為正整數
+1. 寬限期0 以上且小於貸款年限
+
+==輸入不合法時會跳出警告視窗，程式不會因錯誤輸入而崩潰。==
+
 ## 參考資料
 - [內政部不動產資訊平台](https://pip.moi.gov.tw/Publicize/Info/C1040)
 - [中國信託房貸月付金試算](https://www.ctbcbank.com/content/dam/minisite/long/loan/mortgage/cal01.html)
 
-![sample](Images/sample.png)
+![sample](Images/sample1.png)
