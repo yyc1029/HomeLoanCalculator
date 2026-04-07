@@ -38,4 +38,4 @@
 - [內政部不動產資訊平台](https://pip.moi.gov.tw/Publicize/Info/C1040)
 - [中國信託房貸月付金試算](https://www.ctbcbank.com/content/dam/minisite/long/loan/mortgage/cal01.html)
 
-![sample](Images/sample1.png)
+![sample](Images/sample2.png)
