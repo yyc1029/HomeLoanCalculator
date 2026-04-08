@@ -172,6 +172,7 @@
             this.txtLT.Name = "txtLT";
             this.txtLT.Size = new System.Drawing.Size(199, 43);
             this.txtLT.TabIndex = 3;
+            this.txtLT.Text = "20";
             this.txtLT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAIR
@@ -181,6 +182,7 @@
             this.txtAIR.Name = "txtAIR";
             this.txtAIR.Size = new System.Drawing.Size(199, 43);
             this.txtAIR.TabIndex = 2;
+            this.txtAIR.Text = "2";
             this.txtAIR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtIDP
@@ -190,6 +192,7 @@
             this.txtIDP.Name = "txtIDP";
             this.txtIDP.Size = new System.Drawing.Size(199, 43);
             this.txtIDP.TabIndex = 1;
+            this.txtIDP.Text = "20";
             this.txtIDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTHP
@@ -199,6 +202,7 @@
             this.txtTHP.Name = "txtTHP";
             this.txtTHP.Size = new System.Drawing.Size(199, 43);
             this.txtTHP.TabIndex = 0;
+            this.txtTHP.Text = "10000000";
             this.txtTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblGP
@@ -295,7 +299,7 @@
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.ForeColor = System.Drawing.Color.DimGray;
             this.panel1.Location = new System.Drawing.Point(22, 238);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(477, 2);
             this.panel1.TabIndex = 38;
